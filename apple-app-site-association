@@ -9,7 +9,7 @@ encodeURIComponent(JSON.stringify({
     "apps": [],
     "details": [
       {
-        "appID": "TEAM_ID.com.boxfort.Boxfort",
+        "appID": "M83E6KBJYA.com.boxfort.Boxfort",
         "paths": [
           "/search*",
           "/book*"

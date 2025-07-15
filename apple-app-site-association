@@ -1,10 +1,4 @@
-<script>
-// Set the correct content type
-document.contentType = 'application/json';
-
-// Redirect to serve JSON
-window.location.href = 'data:application/json;charset=utf-8,' + 
-encodeURIComponent(JSON.stringify({
+{
   "applinks": {
     "apps": [],
     "details": [
@@ -17,5 +11,4 @@ encodeURIComponent(JSON.stringify({
       }
     ]
   }
-}));
-</script>
+}

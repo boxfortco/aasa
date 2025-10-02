@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxFort - Read This Story</title>
+    <meta name="description" content="Read this amazing interactive storybook with BoxFort. Download the app to start reading!">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://boxfortco.github.io/aasa/book/">
+    <meta property="og:title" content="BoxFort - Read This Story">
+    <meta property="og:description" content="Read this amazing interactive storybook with BoxFort. Download the app to start reading!">
+    <meta property="og:image" content="https://boxfortco.github.io/aasa/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://boxfortco.github.io/aasa/book/">
+    <meta property="twitter:title" content="BoxFort - Read This Story">
+    <meta property="twitter:description" content="Read this amazing interactive storybook with BoxFort. Download the app to start reading!">
+    <meta property="twitter:image" content="https://boxfortco.github.io/aasa/og-image.jpg">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .book-info {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .book-info h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .book-title {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1976d2;
+        }
+        
+        .app-info {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .app-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .app-info p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background: white;
+            color: #ff6b6b;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .feature h4 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .footer {
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .book-info, .app-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 BoxFort</h1>
+            <p>Read this amazing story!</p>
+        </div>
+        
+        <div class="content">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading your story...</p>
+            </div>
+            
+            <div id="content" style="display: none;">
+                <div class="book-info">
+                    <h2>📖 Story Ready</h2>
+                    <p>This story is waiting for you in the BoxFort app!</p>
+                    <div class="book-title" id="book-title">
+                        <!-- Book title will be populated here -->
+                    </div>
+                    <p>Download the BoxFort app to start reading this interactive storybook!</p>
+                </div>
+                
+                <div class="app-info">
+                    <h3>📱 Download BoxFort</h3>
+                    <p>Join thousands of families reading together with our interactive storybooks featuring beloved characters like Patrick, Arty, and Kevin!</p>
+                    <a href="https://apps.apple.com/us/app/boxfort-kids-books/id6443570027" 
+                       target="_blank" 
+                       class="download-button">
+                        📱 Download Free
+                    </a>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">📖</div>
+                        <h4>Interactive Stories</h4>
+                        <p>Touch, tap, and explore every page</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                        <h4>Read Together</h4>
+                        <p>Share stories with family and friends</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎨</div>
+                        <h4>Beautiful Art</h4>
+                        <p>Stunning illustrations and animations</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔊</div>
+                        <h4>Read Aloud</h4>
+                        <p>Professional narration for every story</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Made with ❤️ by BoxFort
+        </div>
+    </div>
+
+    <script>
+        // Get book ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('id') || urlParams.get('book_id') || '';
+        
+        // Update page content
+        function updateContent() {
+            const loading = document.getElementById('loading');
+            const content = document.getElementById('content');
+            const bookTitleElement = document.getElementById('book-title');
+            
+            // Hide loading, show content
+            loading.style.display = 'none';
+            content.style.display = 'block';
+            
+            // Update book title display
+            if (bookId) {
+                // Convert book ID to a more readable format
+                const readableTitle = bookId.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim();
+                bookTitleElement.textContent = readableTitle;
+            } else {
+                bookTitleElement.textContent = 'Amazing Story';
+            }
+        }
+        
+        // Simulate loading time for better UX
+        setTimeout(updateContent, 1500);
+        
+        // Handle app installation detection
+        function handleAppInstallation() {
+            // Check if user is on iOS
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            
+            if (isIOS) {
+                // Try to open the app
+                const appUrl = bookId ? `boxfort://book?id=${bookId}` : 'boxfort://';
+                const fallbackUrl = 'https://apps.apple.com/us/app/boxfort-kids-books/id6443570027';
+                
+                // Create a hidden iframe to attempt app opening
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = appUrl;
+                document.body.appendChild(iframe);
+                
+                // If app doesn't open within 2 seconds, redirect to App Store
+                setTimeout(() => {
+                    window.location.href = fallbackUrl;
+                }, 2000);
+            }
+        }
+        
+        // Add click handler to download button for app installation attempt
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadButton = document.querySelector('.download-button');
+            if (downloadButton) {
+                downloadButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    handleAppInstallation();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

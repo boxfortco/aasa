@@ -289,7 +289,13 @@
             
             // Update search query display
             if (searchQuery) {
-                searchQueryElement.textContent = `"${decodeURIComponent(searchQuery)}"`;
+                // Clean up the search query for display
+                const cleanQuery = decodeURIComponent(searchQuery)
+                    .split(' ')
+                    .filter(word => word.length > 0)
+                    .slice(0, 3) // Show only first 3 words
+                    .join(' ');
+                searchQueryElement.textContent = `"${cleanQuery}"`;
             } else {
                 searchQueryElement.textContent = '"Amazing Stories"';
             }

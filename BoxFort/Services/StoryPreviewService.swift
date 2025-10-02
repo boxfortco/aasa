@@ -48,16 +48,21 @@ class StoryPreviewService: ObservableObject {
     // MARK: - Search Query Generation
     
     func generateSearchQuery(for book: Book) -> String {
-        // Create a search query that will find this book and similar stories
+        // Create a clean, simple search query that will find this book
         var searchTerms: [String] = []
         
         // Add book title words (excluding common words)
         let titleWords = book.title.components(separatedBy: .whitespacesAndNewlines)
             .filter { !["the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for", "of", "with", "by"].contains($0.lowercased()) }
-        searchTerms.append(contentsOf: titleWords)
         
-        // Add character names
-        searchTerms.append(contentsOf: book.characters)
+        // Take only the first 2-3 meaningful words from the title
+        let meaningfulWords = Array(titleWords.prefix(3))
+        searchTerms.append(contentsOf: meaningfulWords)
+        
+        // Add only the main character (first one) if available
+        if let mainCharacter = book.characters.first {
+            searchTerms.append(mainCharacter)
+        }
         
         // Remove duplicates and join
         let uniqueTerms = Array(Set(searchTerms))
@@ -98,14 +103,13 @@ class StoryPreviewService: ObservableObject {
     
     func generateShareText(for book: Book) -> String {
         let webLink = generateWebDeepLink(for: book)
-        let searchQuery = generateSearchQuery(for: book)
         let templates = [
-            "📚 Check out '\(book.title)' on BoxFort! My kids love this story! Search for it here: \(webLink)\n\nDownload the app: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027",
-            "🌟 Just discovered '\(book.title)' on BoxFort! It's become our new favorite bedtime story! Search for it here: \(webLink)\n\nDownload the app: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027",
-            "📖 '\(book.title)' is pure magic! Search for it here: \(webLink)\n\nDownload BoxFort and join the fun: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027"
+            "📚 Check out '\(book.title)' on BoxFort! My kids love this story!\n\nDownload the app: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027",
+            "🌟 Just discovered '\(book.title)' on BoxFort! It's become our new favorite bedtime story!\n\nDownload the app: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027",
+            "📖 '\(book.title)' is pure magic!\n\nDownload BoxFort and join the fun: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027"
         ]
         
-        return templates.randomElement() ?? "Check out \(book.title) on BoxFort! Search for it here: \(webLink)\n\nDownload the app: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027"
+        return templates.randomElement() ?? "Check out \(book.title) on BoxFort!\n\nDownload the app: https://apps.apple.com/us/app/boxfort-kids-books/id6443570027"
     }
     
     // MARK: - QR Code Generation

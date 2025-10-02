@@ -1,0 +1,922 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "56A358EF",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900215",
+      "localizations" : [
+        {
+          "description" : "Patrick's red spots lead to an unusual remedy",
+          "displayName" : "A Spot of Bother",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_aspotofbother",
+      "referenceName" : "A Spot of Bother",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900447",
+      "localizations" : [
+        {
+          "description" : "Kevin finds himself in a sticky situation",
+          "displayName" : "A Very Hairy Little Monster",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_averyhairylittlemonster",
+      "referenceName" : "A Very Hairy Little Monster",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900218",
+      "localizations" : [
+        {
+          "description" : "Arty does not like the winter. Not. At. All.",
+          "displayName" : "An Arty For All Seasons",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_anartyforallseasons",
+      "referenceName" : "An Arty For All Seasons",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900454",
+      "localizations" : [
+        {
+          "description" : "A restless night leads to adventures",
+          "displayName" : "Arty Can't Sleep",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_artycantsleep",
+      "referenceName" : "Arty Can't Sleep",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900388",
+      "localizations" : [
+        {
+          "description" : "Arty's pet fish keeps outgrowing its home",
+          "displayName" : "Big Fish",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_bigfish",
+      "referenceName" : "Big Fish",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900443",
+      "localizations" : [
+        {
+          "description" : "The friends investigate a frightening sound",
+          "displayName" : "Big Scary Monsters",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_bigscarymonsters",
+      "referenceName" : "Big Scary Monsters",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900423",
+      "localizations" : [
+        {
+          "description" : "An almost-courageous little adventure",
+          "displayName" : "Brave",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_brave",
+      "referenceName" : "Brave",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900281",
+      "localizations" : [
+        {
+          "description" : "An unpoppable bubble leads to wild adventure",
+          "displayName" : "Bubblegum",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_bubblegum",
+      "referenceName" : "Bubblegum",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900247",
+      "localizations" : [
+        {
+          "description" : "Patrick tries to bake a very special cake",
+          "displayName" : "Cake-tastrophe",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_caketastrophe",
+      "referenceName" : "Caketastrophe",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6745148557",
+      "localizations" : [
+        {
+          "description" : "Kevin decides to host a costume party",
+          "displayName" : "Costume Party",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_costumeparty",
+      "referenceName" : "Costume Party",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6751445078",
+      "localizations" : [
+        {
+          "description" : "Patrick's fave song gets stuck in his head",
+          "displayName" : "Earworm",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_earworm",
+      "referenceName" : "Earworm",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900282",
+      "localizations" : [
+        {
+          "description" : "A magic wand stolen by a mischievous duck",
+          "displayName" : "Follow That Duck",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_followthatduck",
+      "referenceName" : "Follow That Duck",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900283",
+      "localizations" : [
+        {
+          "description" : "Tracking mysterious giant footprints",
+          "displayName" : "Footprints",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_footprints",
+      "referenceName" : "Footprints",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900285",
+      "localizations" : [
+        {
+          "description" : "Patrick can't remember something important",
+          "displayName" : "Forget Me Not",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_forgetmenot",
+      "referenceName" : "Forget Me Not",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900391",
+      "localizations" : [
+        {
+          "description" : "A day at the beach interrupted by hiccups",
+          "displayName" : "Hiccup",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_hiccup",
+      "referenceName" : "Hiccup",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900253",
+      "localizations" : [
+        {
+          "description" : "Helping a fallen cloud return to the sky",
+          "displayName" : "Huff & Puff",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_huffandpuff",
+      "referenceName" : "Huff & Puff",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900448",
+      "localizations" : [
+        {
+          "description" : "A little monster with endless questions",
+          "displayName" : "Just Because",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_justbecause",
+      "referenceName" : "Just Because",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "399.99",
+      "familyShareable" : false,
+      "internalID" : "6746946021",
+      "localizations" : [
+        {
+          "description" : "Unlock all books and be a big time supporter",
+          "displayName" : "BoxFort Forever - All Stories",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "lifetime",
+      "referenceName" : "Lifetime Access",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6746698856",
+      "localizations" : [
+        {
+          "description" : "Klaus measures everything!",
+          "displayName" : "Measuring Up",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_measuringup",
+      "referenceName" : "Measuring Up",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900214",
+      "localizations" : [
+        {
+          "description" : "Patrick loves to collect mittens",
+          "displayName" : "Mittens",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_mittens",
+      "referenceName" : "Mittens",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900470",
+      "localizations" : [
+        {
+          "description" : "A chilly predicament needs solving",
+          "displayName" : "My Toes Are Cold",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_mytoesarecold",
+      "referenceName" : "My Toes Are Cold",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900415",
+      "localizations" : [
+        {
+          "description" : "Patrick's imagination runs wild with worry",
+          "displayName" : "Nothing to Worry About",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_nothingtoworryabout",
+      "referenceName" : "Nothing to Worry About",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900358",
+      "localizations" : [
+        {
+          "description" : "Helping a sick friend with endless requests",
+          "displayName" : "One More Thing",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_onemorething",
+      "referenceName" : "One More Thing",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900421",
+      "localizations" : [
+        {
+          "description" : "A pet grows to an enormous size",
+          "displayName" : "One Very Big Niblit",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_oneverybigniblit",
+      "referenceName" : "One Very Big Niblit",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900370",
+      "localizations" : [
+        {
+          "description" : "Discovering a mysterious object",
+          "displayName" : "Patrick Found a Something",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_patrickfoundasomething",
+      "referenceName" : "Patrick Found a Something",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900471",
+      "localizations" : [
+        {
+          "description" : "A determined space exploration attempt",
+          "displayName" : "Patrick Takes Off",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_patricktakesoff",
+      "referenceName" : "Patrick Takes Off",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900392",
+      "localizations" : [
+        {
+          "description" : "Resisting temptation proves difficult",
+          "displayName" : "Patrick vs. Cake",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_patrickvscake",
+      "referenceName" : "Patrick vs. Cake",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900332",
+      "localizations" : [
+        {
+          "description" : "A fruit discovers her true identity",
+          "displayName" : "Penelope Pineapple",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_penelopepineapple",
+      "referenceName" : "Penelope Pineapple",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6752530564",
+      "localizations" : [
+        {
+          "description" : "Sheep Over storybook",
+          "displayName" : "Sheep Over",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_sheepover",
+      "referenceName" : "Sheep Over",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900426",
+      "localizations" : [
+        {
+          "description" : "The friends enjoy their first halloween",
+          "displayName" : "Something to do with Pumpkins",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_somethingtodowithpumpkins",
+      "referenceName" : "Something to do with Pumpkins",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900417",
+      "localizations" : [
+        {
+          "description" : "Patrick competes in unusual sporting events",
+          "displayName" : "Sports Day",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_sportsday",
+      "referenceName" : "Sports Day",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900411",
+      "localizations" : [
+        {
+          "description" : "An impatient little monster can't wait",
+          "displayName" : "Surprise",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_surprise",
+      "referenceName" : "Surprise",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900410",
+      "localizations" : [
+        {
+          "description" : "A space adventure to retrieve a lost balloon",
+          "displayName" : "Taconauts",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_taconauts",
+      "referenceName" : "Taconauts",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900384",
+      "localizations" : [
+        {
+          "description" : "A giant fruit changes two lives forever",
+          "displayName" : "The Big Blueberry",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_thebigblueberry",
+      "referenceName" : "The Big Blueberry",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900364",
+      "localizations" : [
+        {
+          "description" : "Friends discover a special surprise gift",
+          "displayName" : "The Box",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_thebox",
+      "referenceName" : "The Box",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900154",
+      "localizations" : [
+        {
+          "description" : "Three friends investigate a fruit mystery",
+          "displayName" : "The Case of the Missing Banana",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_thecaseofthemissingbanana",
+      "referenceName" : "The Case of the Missing Banana",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900297",
+      "localizations" : [
+        {
+          "description" : "A plan to catch Santa gets gnome-invaded",
+          "displayName" : "The Christmas Stake-Out",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_stakeout",
+      "referenceName" : "The Christmas Stake-Out",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6744900452",
+      "localizations" : [
+        {
+          "description" : "Big words baffle professor penguin",
+          "displayName" : "The Eloquent Penguin",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_theeloquentpenguin",
+      "referenceName" : "The Eloquent Penguin",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900216",
+      "localizations" : [
+        {
+          "description" : "A camping trip with a clueless 'expert'",
+          "displayName" : "The Expert",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_theexpert",
+      "referenceName" : "The Expert",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900451",
+      "localizations" : [
+        {
+          "description" : "A little monster's hairy situation",
+          "displayName" : "The Haircut",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_thehaircut",
+      "referenceName" : "The Haircut",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900419",
+      "localizations" : [
+        {
+          "description" : "A door that refuses to open",
+          "displayName" : "The Impossible Door",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_theimpossibledoor",
+      "referenceName" : "The Impossible Door",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900469",
+      "localizations" : [
+        {
+          "description" : "Considering leaving town for a change",
+          "displayName" : "The Move",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_themove",
+      "referenceName" : "The Move",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900300",
+      "localizations" : [
+        {
+          "description" : "A pet with unexpected side effects",
+          "displayName" : "The Niblit",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_theniblit",
+      "referenceName" : "The Niblit",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900334",
+      "localizations" : [
+        {
+          "description" : "Racing to fix the town timepiece",
+          "displayName" : "The Stopped Clock",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_thestoppedclock",
+      "referenceName" : "The Stopped Clock",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900333",
+      "localizations" : [
+        {
+          "description" : "Friends hunt for buried treasure",
+          "displayName" : "The Treasure Map",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_thetreasuremap",
+      "referenceName" : "The Treasure Map",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900450",
+      "localizations" : [
+        {
+          "description" : "Finding joy on a rainy day",
+          "displayName" : "The Unhappy Rain Cloud",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_theunhappyraincloud",
+      "referenceName" : "The Unhappy Raincloud",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6744900048",
+      "localizations" : [
+        {
+          "description" : "Demolition experts learn to build & rebuild",
+          "displayName" : "Wreakcoons",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "book_wreakcoons",
+      "referenceName" : "Wreakcoons",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6443570027",
+    "_developerTeamID" : "M83E6KBJYA",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 779501758.31447995,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21022750",
+      "localizations" : [
+
+      ],
+      "name" : "Unlimited",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "1647263770",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock all storybooks, renews monthly",
+              "displayName" : "Unlimited Access | Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "bf_499_1m_1w0",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Unlimited Access | Monthly",
+          "subscriptionGroupID" : "21022750",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+            {
+              "eligibility" : [
+                "new",
+                "expired"
+              ],
+              "internalID" : "32A82C0D",
+              "isStackable" : false,
+              "numberOfPeriods" : 1,
+              "paymentMode" : "free",
+              "referenceName" : "Mailing list",
+              "subscriptionPeriod" : "P1M"
+            }
+          ],
+          "displayPrice" : "6.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "6479212228",
+          "introductoryOffer" : {
+            "internalID" : "A43ABA11",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Unlock all storybooks, renews monthly",
+              "displayName" : "Unlimited Access | Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "bf_699_1m",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Unlimited Access | Monthly | 2024",
+          "subscriptionGroupID" : "21022750",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+            {
+              "eligibility" : [
+                "expired",
+                "new",
+                "existing"
+              ],
+              "internalID" : "CB662989",
+              "isStackable" : false,
+              "numberOfPeriods" : 1,
+              "paymentMode" : "free",
+              "referenceName" : "Annual_BTS",
+              "subscriptionPeriod" : "P2M"
+            },
+            {
+              "eligibility" : [
+                "expired",
+                "new"
+              ],
+              "internalID" : "963CA98C",
+              "isStackable" : false,
+              "numberOfPeriods" : 1,
+              "paymentMode" : "free",
+              "referenceName" : "Taco Book 2 months free",
+              "subscriptionPeriod" : "P2M"
+            }
+          ],
+          "displayPrice" : "49.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "1647264458",
+          "introductoryOffer" : {
+            "internalID" : "4E4D9F57",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Unlock all storybooks for a full year",
+              "displayName" : "Unlimited Access | Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "bf_4999_1y",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Unlimiteed Access | Annual",
+          "subscriptionGroupID" : "21022750",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "readTogetherSessions": {
+      "$sessionId": {
+        ".read": "data.child('status').val() == 'active' && data.child('expiresAt').val() > now",
+        ".write": "auth != null && (auth.uid == data.child('hostUserId').val() || auth.uid == newData.child('hostUserId').val())",
+        ".validate": "newData.hasChildren(['bookId', 'currentPage', 'hostUserId', 'createdAt', 'expiresAt']) && newData.child('hostUserId').val() == auth.uid"
+      }
+    }
+  }
+}

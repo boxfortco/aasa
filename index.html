@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxFort - Kids Interactive Storybooks</title>
+    <meta name="description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://boxfortco.github.io/aasa/">
+    <meta property="og:title" content="BoxFort - Kids Interactive Storybooks">
+    <meta property="og:description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!">
+    <meta property="og:image" content="https://boxfortco.github.io/aasa/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://boxfortco.github.io/aasa/">
+    <meta property="twitter:title" content="BoxFort - Kids Interactive Storybooks">
+    <meta property="twitter:description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!">
+    <meta property="twitter:image" content="https://boxfortco.github.io/aasa/og-image.jpg">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .welcome-info {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .welcome-info h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .welcome-info p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .app-info {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .app-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .app-info p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background: white;
+            color: #ff6b6b;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .feature h4 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .footer {
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .welcome-info, .app-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 BoxFort</h1>
+            <p>Interactive Storybooks for Kids</p>
+        </div>
+        
+        <div class="content">
+            <div class="welcome-info">
+                <h2>🌟 Welcome to BoxFort!</h2>
+                <p>Discover a world of interactive storybooks designed specifically for kids. Our stories feature beloved characters like Patrick, Arty, and Kevin in adventures that come to life with every touch!</p>
+            </div>
+            
+            <div class="app-info">
+                <h3>📱 Download BoxFort</h3>
+                <p>Join thousands of families reading together with our interactive storybooks. Each story is carefully crafted to engage young readers and create magical reading experiences!</p>
+                <a href="https://apps.apple.com/us/app/boxfort-kids-books/id6443570027" 
+                   target="_blank" 
+                   class="download-button">
+                    📱 Download Free
+                </a>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📖</div>
+                    <h4>Interactive Stories</h4>
+                    <p>Touch, tap, and explore every page</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h4>Read Together</h4>
+                    <p>Share stories with family and friends</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Beautiful Art</h4>
+                    <p>Stunning illustrations and animations</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔊</div>
+                    <h4>Read Aloud</h4>
+                    <p>Professional narration for every story</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Made with ❤️ by BoxFort
+        </div>
+    </div>
+</body>
+</html>

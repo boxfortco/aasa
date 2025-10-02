@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxFort - Read Together</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .book-container {
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .book-image {
+            max-width: 100%;
+            max-height: 70vh;
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            object-fit: contain;
+        }
+        
+        .book-image.page-turn {
+            transform: scale(0.95);
+        }
+        
+        .page-info {
+            font-size: 18px;
+            color: #666;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            order: -1;
+        }
+        
+        .status.connected {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            text-align: center;
+            padding: 60px;
+            color: #721c24;
+        }
+        
+        .footer {
+            padding: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            
+            .book-container {
+                padding: 20px;
+            }
+            
+            .book-image {
+                max-height: 60vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .book-image {
+                max-height: 50vh;
+            }
+            
+            .book-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Reading Together</h1>
+            <p id="book-title">Loading book...</p>
+        </div>
+        
+        <div id="content">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Connecting to reading session...</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Made with ❤️ by BoxFort
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    
+    <!-- Book Image Mappings -->
+    <script src="images.js"></script>
+    
+    <script>
+        // Firebase configuration - BoxFort Production Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyDfEj4GFPEWpJbeYKZLsiNSsrCmrCpq5OU",
+            authDomain: "boxfort-6a746.firebaseapp.com",
+            databaseURL: "https://boxfort-6a746-default-rtdb.firebaseio.com",
+            projectId: "boxfort-6a746",
+            storageBucket: "boxfort-6a746.appspot.com",
+            messagingSenderId: "6474039193",
+            appId: "1:6474039193:android:11a35136df582697b21d08"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        
+        // Get session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('s') || window.location.pathname.split('/').pop();
+        
+        let currentPage = 0;
+        let bookData = null;
+        
+        // Main initialization
+        if (!sessionId || sessionId === 'read') {
+            showError('Invalid reading session link. Please check your link and try again.');
+        } else {
+            initializeSession(sessionId);
+        }
+        
+        function initializeSession(sessionId) {
+            const sessionRef = database.ref(`readTogetherSessions/${sessionId}`);
+            
+            // First, check if session exists and is valid
+            sessionRef.once('value')
+                .then(snapshot => {
+                    if (!snapshot.exists()) {
+                        throw new Error('Reading session not found. It may have expired.');
+                    }
+                    
+                    const sessionData = snapshot.val();
+                    const now = Date.now() / 1000;
+                    
+                    if (now > sessionData.expiresAt) {
+                        throw new Error('This reading session has expired.');
+                    }
+                    
+                    if (sessionData.status === 'ended') {
+                        throw new Error('This reading session has ended.');
+                    }
+                    
+                    // Load book data
+                    return loadBook(sessionData.bookId);
+                })
+                .then(() => {
+                    // Start observing session updates
+                    observeSession(sessionRef);
+                })
+                .catch(error => {
+                    showError(error.message);
+                });
+        }
+        
+        function loadBook(bookId) {
+            // Use the external image mappings
+            const book = getBookData(bookId);
+            if (!book) {
+                throw new Error('Book not found.');
+            }
+            
+            bookData = book;
+            document.getElementById('book-title').textContent = book.title;
+            return book;
+        }
+        
+        function observeSession(sessionRef) {
+            sessionRef.on('value', snapshot => {
+                console.log('Session update received:', snapshot.val());
+                
+                if (!snapshot.exists()) {
+                    console.log('Session does not exist, showing disconnected state');
+                    showDisconnectedState();
+                    return;
+                }
+                
+                const data = snapshot.val();
+                
+                if (data.status === 'ended') {
+                    console.log('Session ended, showing disconnected state');
+                    // Add a small delay to ensure the status change is processed
+                    setTimeout(() => {
+                        showDisconnectedState();
+                        sessionRef.off();
+                    }, 100);
+                    return;
+                }
+                
+                updatePage(data.currentPage, data.totalPages);
+            });
+        }
+        
+        function updatePage(pageNumber, totalPages) {
+            if (!bookData) return;
+            
+            currentPage = pageNumber;
+            
+            // Generate the base URL without extension
+            const baseUrl = bookData.generatePageUrl(pageNumber).replace(/\.(jpg|png|gif)$/, '');
+            
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <div class="book-container">
+                    <div class="status connected">● Connected</div>
+                    <img 
+                        src="" 
+                        alt="Page ${pageNumber + 1}"
+                        class="book-image"
+                        id="page-image"
+                        onload="handleImageLoad(this)"
+                    >
+                    <div class="page-info">
+                        Page ${pageNumber + 1} of ${totalPages}
+                    </div>
+                </div>
+            `;
+            
+            // Try loading image with fallback
+            const img = document.getElementById('page-image');
+            tryLoadImageWithFallback(img, baseUrl, pageNumber);
+            
+            // Add page turn animation
+            img.classList.add('page-turn');
+            setTimeout(() => img.classList.remove('page-turn'), 300);
+        }
+        
+        function handleImageLoad(img) {
+            // Reset extension tried flag on successful load
+            img.dataset.extensionTried = '';
+        }
+        
+        function handleImageError(img, pageNumber) {
+            // Try different extensions if this is the first error
+            if (!img.dataset.extensionTried) {
+                const currentSrc = img.src;
+                const baseUrl = currentSrc.replace(/\.(jpg|png|gif)$/, '');
+                
+                // Try .png if current was .jpg
+                if (currentSrc.endsWith('.jpg')) {
+                    img.src = baseUrl + '.png';
+                    img.dataset.extensionTried = 'png';
+                    return;
+                }
+                
+                // Try .gif if current was .png
+                if (currentSrc.endsWith('.png')) {
+                    img.src = baseUrl + '.gif';
+                    img.dataset.extensionTried = 'gif';
+                    return;
+                }
+            }
+            
+            // If all extensions failed, show placeholder
+            img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDQwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0yMDAgMzAwSDI1MFYzNTBIMjAwVjMwMFoiIGZpbGw9IiNEOUQ5RDkiLz4KPHN2Zz4=';
+        }
+        
+        // Function to try loading image with different extensions
+        function tryLoadImageWithFallback(img, baseUrl, pageNumber) {
+            const extensions = ['jpg', 'png', 'gif'];
+            let currentIndex = 0;
+            
+            function tryNextExtension() {
+                if (currentIndex >= extensions.length) {
+                    // All extensions failed, show placeholder
+                    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDQwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0yMDAgMzAwSDI1MFYzNTBIMjAwVjMwMFoiIGZpbGw9IiNEOUQ5RDkiLz4KPHN2Zz4=';
+                    return;
+                }
+                
+                const extension = extensions[currentIndex];
+                const testUrl = `${baseUrl}.${extension}`;
+                
+                // Create a test image to check if it exists
+                const testImg = new Image();
+                testImg.onload = function() {
+                    // Image exists, use it
+                    img.src = testUrl;
+                };
+                testImg.onerror = function() {
+                    // Image doesn't exist, try next extension
+                    currentIndex++;
+                    tryNextExtension();
+                };
+                testImg.src = testUrl;
+            }
+            
+            tryNextExtension();
+        }
+        
+        // Function to preload and test image availability
+        function preloadImage(url) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(url);
+                img.onerror = () => reject(new Error('Image failed to load'));
+                img.src = url;
+            });
+        }
+        
+        function showError(message) {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <div class="error">
+                    <h2>😔 Oops!</h2>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        function showDisconnectedState() {
+            const content = document.getElementById('content');
+            content.innerHTML = `
+                <div class="book-container">
+                    <div class="status" style="background: #f8d7da; color: #721c24; margin-bottom: 30px;">
+                        ● Disconnected
+                    </div>
+                    <div style="text-align: center; max-width: 400px; margin: 0 auto;">
+                        <h2 style="color: #333; margin-bottom: 20px;">📚 Reading Session Ended</h2>
+                        <p style="color: #666; margin-bottom: 30px; line-height: 1.6;">
+                            Thank you for reading together! The host has ended the reading session.
+                        </p>
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                            <h3 style="color: #333; margin-bottom: 15px;">Want to read more stories?</h3>
+                            <p style="color: #666; margin-bottom: 20px;">
+                                Download the BoxFort app to access hundreds of interactive storybooks!
+                            </p>
+                            <a href="https://apps.apple.com/us/app/boxfort-kids-books/id6443570027" 
+                               target="_blank" 
+                               style="display: inline-block; background: #007AFF; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s ease;">
+                                📱 Download BoxFort App
+                            </a>
+                        </div>
+                        <p style="color: #999; font-size: 14px;">
+                            Available on the App Store
+                        </p>
+                        <button onclick="showDisconnectedState()" style="margin-top: 20px; padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                            🔄 Test Disconnected State
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

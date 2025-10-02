@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "M83E6KBJYA.com.boxfort.Boxfort",
+        "paths": [
+          "/search*",
+          "/book*"
+        ]
+      }
+    ]
+  }
+} 

@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoxFort - Kids Interactive Storybooks</title>
-    <meta name="description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!" id="meta-description">
+    <meta name="description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="" id="og-url">
-    <meta property="og:title" content="BoxFort - Kids Interactive Storybooks" id="og-title">
-    <meta property="og:description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!" id="og-description">
-    <meta property="og:image" content="" id="og-image">
+    <meta property="og:url" content="https://boxfortco.github.io/aasa/">
+    <meta property="og:title" content="BoxFort - Kids Interactive Storybooks">
+    <meta property="og:description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!">
+    <meta property="og:image" content="https://boxfortco.github.io/aasa/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="" id="twitter-url">
-    <meta property="twitter:title" content="BoxFort - Kids Interactive Storybooks" id="twitter-title">
-    <meta property="twitter:description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!" id="twitter-description">
-    <meta property="twitter:image" content="" id="twitter-image">
+    <meta property="twitter:url" content="https://boxfortco.github.io/aasa/">
+    <meta property="twitter:title" content="BoxFort - Kids Interactive Storybooks">
+    <meta property="twitter:description" content="Discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!">
+    <meta property="twitter:image" content="https://boxfortco.github.io/aasa/og-image.jpg">
+    
     <style>
         * {
             margin: 0;
@@ -69,69 +70,24 @@
             padding: 40px 30px;
         }
         
-        .book-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .book-image {
-            max-width: 100%;
-            max-height: 70vh;
-            width: auto;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 30px;
-            object-fit: contain;
-        }
-        
-        .book-title {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-        
-        .book-info {
+        .welcome-info {
             background: #f8f9fa;
             border-radius: 16px;
             padding: 30px;
             margin-bottom: 30px;
-            width: 100%;
         }
         
-        .book-info p {
+        .welcome-info h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .welcome-info p {
             color: #666;
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 60px;
-        }
-        
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .error {
-            text-align: center;
-            padding: 60px;
-            color: #721c24;
         }
         
         .app-info {
@@ -140,7 +96,6 @@
             border-radius: 16px;
             padding: 30px;
             margin-bottom: 30px;
-            width: 100%;
         }
         
         .app-info h3 {
@@ -173,6 +128,36 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .feature h4 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
         .footer {
             padding: 20px;
             text-align: center;
@@ -194,12 +179,8 @@
                 padding: 30px 20px;
             }
             
-            .book-info, .app-info {
+            .welcome-info, .app-info {
                 padding: 20px;
-            }
-            
-            .book-image {
-                max-height: 60vh;
             }
         }
     </style>
@@ -212,10 +193,41 @@
         </div>
         
         <div class="content">
-            <div id="content-area">
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <p>Loading book...</p>
+            <div class="welcome-info">
+                <h2>🌟 Welcome to BoxFort!</h2>
+                <p>Discover a world of interactive storybooks designed specifically for kids. Our stories feature beloved characters like Patrick, Arty, and Kevin in adventures that come to life with every touch!</p>
+            </div>
+            
+            <div class="app-info">
+                <h3>📱 Download BoxFort</h3>
+                <p>Join thousands of families reading together with our interactive storybooks. Each story is carefully crafted to engage young readers and create magical reading experiences!</p>
+                <a href="https://apps.apple.com/us/app/boxfort-kids-books/id6443570027" 
+                   target="_blank" 
+                   class="download-button">
+                    📱 Download Free
+                </a>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📖</div>
+                    <h4>Interactive Stories</h4>
+                    <p>Touch, tap, and explore every page</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h4>Read Together</h4>
+                    <p>Share stories with family and friends</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Beautiful Art</h4>
+                    <p>Stunning illustrations and animations</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔊</div>
+                    <h4>Read Aloud</h4>
+                    <p>Professional narration for every story</p>
                 </div>
             </div>
         </div>
@@ -224,225 +236,5 @@
             Made with ❤️ by BoxFort
         </div>
     </div>
-
-    <!-- Book Image Mappings -->
-    <script>
-        // BoxFort S3 Image System
-        const S3_BASE_URL = 'https://boxfort-storybooks.s3.us-east-2.amazonaws.com';
-        
-        // Book metadata mapping (from images.js)
-        const bookMetadata = {
-            'anartyforallseasons': { title: 'An Arty For All Seasons', folder: 'AnArtyForAllSeasons' },
-            'artwork': { title: 'Artwork', folder: 'Artwork' },
-            'artycantsleep': { title: 'Arty Can\'t Sleep', folder: 'ArtyCantSleep' },
-            'aspotofbother': { title: 'A Spot of Bother', folder: 'ASpotOfBother' },
-            'averyhairylittlemonster': { title: 'A Very Hairy Little Monster', folder: 'AVeryHairyLittleMonster' },
-            'bigfish': { title: 'Big Fish', folder: 'BigFish' },
-            'bigscarymonsters': { title: 'Big Scary Monsters', folder: 'BigScaryMonsters' },
-            'brave': { title: 'Brave', folder: 'Brave' },
-            'bubblegum': { title: 'Bubblegum', folder: 'Bubblegum' },
-            'caketastrophe': { title: 'Caketastrophe', folder: 'Caketastrophe' },
-            'chaosterror': { title: 'Chaos Terror Marshmallows', folder: 'ChaosTerrorMarshmallows' },
-            'costumeparty': { title: 'Costume Party', folder: 'CostumeParty' },
-            'fireworks': { title: 'Fireworks', folder: 'Fireworks' },
-            'followthatduck': { title: 'Follow That Duck', folder: 'FollowThatDuck' },
-            'footprints': { title: 'Footprints', folder: 'Footprints' },
-            'forgetmenot': { title: 'Forget Me Not', folder: 'ForgetMeNot' },
-            'ghostpepper': { title: 'Ghost Pepper', folder: 'GhostPepper' },
-            'hiccup': { title: 'Hiccup', folder: 'Hiccup' },
-            'housesit': { title: 'House Sit', folder: 'HouseSit' },
-            'huffandpuff': { title: 'Huff and Puff', folder: 'HuffAndPuff' },
-            'justbecause': { title: 'Just Because', folder: 'JustBecause' },
-            'letstacoboutit': { title: 'Let\'s Taco Bout It', folder: 'LetsTacoBoutIt' },
-            'lost': { title: 'Lost', folder: 'Lost' },
-            'measuringup': { title: 'Measuring Up', folder: 'MeasuringUp' },
-            'mytoesarecold': { title: 'My Toes Are Cold', folder: 'MyToesAreCold' },
-            'nothingtoworryabout': { title: 'Nothing To Worry About', folder: 'NothingToWorryAbout' },
-            'onemorething': { title: 'One More Thing', folder: 'OneMoreThing' },
-            'oneverybigniblit': { title: 'One Very Big Niblit', folder: 'OneVeryBigNiblit' },
-            'patrickfoundasomething': { title: 'Patrick Found A Something', folder: 'PatrickFoundASomething' },
-            'patricktakesoff': { title: 'Patrick Takes Off', folder: 'PatrickTakesOff' },
-            'patrickvscake': { title: 'Patrick Vs Cake', folder: 'PatrickVsCake' },
-            'penelopepineapple': { title: 'Penelope Pineapple', folder: 'PenelopePineapple' },
-            'somethingtodowithpumpkins': { title: 'Something To Do With Pumpkins', folder: 'SomethingToDoWithPumpkins' },
-            'sportsday': { title: 'Sports Day', folder: 'SportsDay' },
-            'stakeout': { title: 'Stake Out', folder: 'StakeOut' },
-            'surprise': { title: 'Surprise', folder: 'Surprise' },
-            'sheepover': { title: 'Sheep Over', folder: 'SheepOver' },
-            'sweaterweather': { title: 'Sweater Weather', folder: 'SweaterWeather' },
-            'earworm': { title: 'Earworm', folder: 'Earworm' },
-            'colonelgooseberry': { title: 'Colonel Gooseberry and the Raiders of the New Light', folder: 'ColonelGooseberry' },
-            'taconauts': { title: 'Taconauts', folder: 'Taconauts' },
-            'tag': { title: 'Tag', folder: 'Tag' },
-            'thebigblueberry': { title: 'The Big Blueberry', folder: 'TheBigBlueberry' },
-            'thebox': { title: 'The Box', folder: 'TheBox' },
-            'thecaseofthemissingbanana': { title: 'The Case Of The Missing Banana', folder: 'TheCaseOfTheMissingBanana' },
-            'theeloquentpenguin': { title: 'The Eloquent Penguin', folder: 'TheEloquentPenguin' },
-            'theexpert': { title: 'The Expert', folder: 'TheExpert' },
-            'thehaircut': { title: 'The Haircut', folder: 'TheHaircut' },
-            'theimpossibledoor': { title: 'The Impossible Door', folder: 'TheImpossibleDoor' },
-            'themove': { title: 'The Move', folder: 'TheMove' },
-            'theniblit': { title: 'The Niblit', folder: 'TheNiblit' },
-            'theonlyexplanation': { title: 'The Only Explanation', folder: 'TheOnlyExplanation' },
-            'thestoppedclock': { title: 'The Stopped Clock', folder: 'TheStoppedClock' },
-            'thetreasuremap': { title: 'The Treasure Map', folder: 'TheTreasureMap' },
-            'theunhappyraincloud': { title: 'The Unhappy Rain Cloud', folder: 'TheUnhappyRainCloud' },
-            'weneedtotalkaboutthesandwich': { title: 'We Need To Talk About The Sandwich', folder: 'WeNeedToTalkAboutTheSandwich' },
-            'wreakcoons': { title: 'Wreakcoons', folder: 'Wreakcoons' }
-        };
-        
-        // Function to generate cover image URL (page 000)
-        function generateCoverUrl(bookId) {
-            const book = bookMetadata[bookId.toLowerCase()];
-            if (!book) return null;
-            
-            const baseFileName = `${book.folder}_000`;
-            return `${S3_BASE_URL}/${book.folder}/${baseFileName}`;
-        }
-        
-        // Function to get book data
-        function getBookData(bookId) {
-            return bookMetadata[bookId.toLowerCase()] || null;
-        }
-        
-        // Function to try loading image with different extensions
-        function tryLoadImageWithFallback(img, baseUrl, onSuccess) {
-            const extensions = ['jpg', 'png', 'gif'];
-            let currentIndex = 0;
-            
-            function tryNextExtension() {
-                if (currentIndex >= extensions.length) {
-                    // All extensions failed
-                    showError('Book cover image not found.');
-                    return;
-                }
-                
-                const extension = extensions[currentIndex];
-                const testUrl = `${baseUrl}.${extension}`;
-                
-                // Create a test image to check if it exists
-                const testImg = new Image();
-                testImg.onload = function() {
-                    // Image exists, use it
-                    img.src = testUrl;
-                    if (onSuccess) onSuccess(testUrl);
-                };
-                testImg.onerror = function() {
-                    // Image doesn't exist, try next extension
-                    currentIndex++;
-                    tryNextExtension();
-                };
-                testImg.src = testUrl;
-            }
-            
-            tryNextExtension();
-        }
-        
-        // Main initialization
-        function init() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const bookId = urlParams.get('id');
-            
-            const currentUrl = window.location.href;
-            
-            // Update base meta tags
-            document.getElementById('og-url').content = currentUrl;
-            document.getElementById('twitter-url').content = currentUrl;
-            
-            if (!bookId) {
-                showError('No book ID provided in the URL.');
-                return;
-            }
-            
-            const book = getBookData(bookId);
-            if (!book) {
-                showError(`Book "${bookId}" not found.`);
-                return;
-            }
-            
-            // Generate cover image URL
-            const baseCoverUrl = generateCoverUrl(bookId);
-            if (!baseCoverUrl) {
-                showError('Could not generate book cover URL.');
-                return;
-            }
-            
-            // Update page title and meta tags
-            const pageTitle = `${book.title} - BoxFort`;
-            const pageDescription = `Read "${book.title}" and discover amazing interactive storybooks for kids with BoxFort. Download the app to read together!`;
-            
-            document.title = pageTitle;
-            document.getElementById('meta-description').content = pageDescription;
-            
-            // Update Open Graph meta tags
-            document.getElementById('og-title').content = pageTitle;
-            document.getElementById('og-description').content = pageDescription;
-            document.getElementById('og-url').content = currentUrl;
-            document.getElementById('og-image').content = `${baseCoverUrl}.jpg`;
-            
-            // Update Twitter meta tags
-            document.getElementById('twitter-title').content = pageTitle;
-            document.getElementById('twitter-description').content = pageDescription;
-            document.getElementById('twitter-url').content = currentUrl;
-            document.getElementById('twitter-image').content = `${baseCoverUrl}.jpg`;
-            
-            // Display book cover
-            const contentArea = document.getElementById('content-area');
-            contentArea.innerHTML = `
-                <div class="book-container">
-                    <h2 class="book-title">${book.title}</h2>
-                    <img 
-                        src="" 
-                        alt="${book.title} Cover"
-                        class="book-image"
-                        id="book-cover"
-                    >
-                    <div class="book-info">
-                        <p>Discover this interactive storybook and many more adventures with Patrick, Arty, Kevin, and the rest of the BoxFort gang!</p>
-                    </div>
-                    <div class="app-info">
-                        <h3>📱 Download BoxFort</h3>
-                        <p>Join thousands of families reading together with our interactive storybooks. Each story is carefully crafted to engage young readers and create magical reading experiences!</p>
-                        <a href="https://apps.apple.com/us/app/boxfort-kids-books/id6443570027" 
-                           target="_blank" 
-                           class="download-button">
-                            📱 Download Free
-                        </a>
-                    </div>
-                </div>
-            `;
-            
-            // Load the cover image with extension fallback
-            const img = document.getElementById('book-cover');
-            tryLoadImageWithFallback(img, baseCoverUrl, (imageUrl) => {
-                // Update Open Graph and Twitter images with the actual working URL
-                document.getElementById('og-image').content = imageUrl;
-                document.getElementById('twitter-image').content = imageUrl;
-            });
-        }
-        
-        function showError(message) {
-            const contentArea = document.getElementById('content-area');
-            contentArea.innerHTML = `
-                <div class="error">
-                    <h2>😔 Oops!</h2>
-                    <p>${message}</p>
-                    <div class="app-info" style="margin-top: 30px;">
-                        <h3>📱 Download BoxFort</h3>
-                        <p>Join thousands of families reading together with our interactive storybooks!</p>
-                        <a href="https://apps.apple.com/us/app/boxfort-kids-books/id6443570027" 
-                           target="_blank" 
-                           class="download-button">
-                            📱 Download Free
-                        </a>
-                    </div>
-                </div>
-            `;
-        }
-        
-        // Initialize when page loads
-        window.addEventListener('DOMContentLoaded', init);
-    </script>
 </body>
 </html>
-
